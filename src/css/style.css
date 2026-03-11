@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,-50..200;1,17..18,400..700,-50..200&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Google Sans';
+    /* background-color: #f5f5f7; */
+
+}
+
+.container{
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+}
+
+.calc{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.lang{
+
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+.signup{
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    /* background-color: #a7a7a7; */
+}
+.header_fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #f5f5f7;
+    width: 100%;
+}
+.header_top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 25px 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1px;
+    /* background-color: #a7a7a7; */
+
+}
+
+.header_top .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.nav-link{
+    padding: 20px 0;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+}
+
+.services_section{
+    padding: 50px 0;
+}
+
+/* ========== CALCULATOR SECTION ========== */
+
+.calculator_section {
+    padding: 100px 0 50px 0;
+}
+
+.calculator_content {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.calculator_section-content-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.calculator_section-content-text {
+    font-size: 18px;
+    color: #666;
+}
+
+.calculator_block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* ========== IMAGE CANVAS WITH LAYERS ========== */
+
+.calculator_img-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-canvas {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #f5f5f7 0%, #e8e8eb 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: all 0.6s ease-in-out;
+    font-size: 20px;
+    font-weight: 600;
+    color: #999;
+}
+
+.layer-base {
+    background: #fafafa;
+    color: #ccc;
+    transition-delay: 0s;
+}
+
+.layer-walls {
+    background-color: #FFFFFF;
+    transition-delay: 0.1s;
+}
+
+.layer-flooring {
+    background-color: #DEB887;
+    opacity: 0.3;
+    transition-delay: 0.15s;
+}
+
+.layer-furniture {
+    opacity: 0;
+    transition-delay: 0.2s;
+}
+
+.layer-decor {
+    opacity: 0;
+    transition-delay: 0.25s;
+}
+
+/* ========== MORPH/PULSE ANIMATION ========== */
+
+@keyframes morphPulse {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.05);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.image-canvas.morphing {
+    animation: morphPulse 0.6s ease-in-out;
+}
+
+/* ========== OPTIONS LIST ========== */
+
+.calculator_options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.option-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========== TOGGLE BUTTONS ========== */
+
+.options_list-toggle {
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.toggle-btn {
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    border-color: #999;
+    color: #333;
+}
+
+.toggle-btn.active {
+    border-color: #1a1a1a;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* ========== SELECT DROPDOWN ========== */
+
+.options_list-select {
+    display: flex;
+    flex-direction: column;
+}
+
+.select-dropdown {
+    padding: 12px 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.select-dropdown:hover,
+.select-dropdown:focus {
+    border-color: #999;
+    outline: none;
+}
+
+/* ========== INPUT FIELD ========== */
+
+.options_list-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    padding: 12px 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:hover,
+.input-field:focus {
+    border-color: #999;
+    outline: none;
+}
+
+/* ========== CAROUSEL ========== */
+
+.options_list-carousel {
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carousel-nav {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ddd;
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #666;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.carousel-nav:hover {
+    border-color: #1a1a1a;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #f5f5f7 0%, #e8e8eb 100%);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-nav:active {
+    transform: scale(0.95);
+}
+
+.carousel-items {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    flex: 1;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.carousel-items::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.carousel-item:hover {
+    opacity: 0.85;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item span {
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+}
+
+.swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    background-size: cover;
+}
+
+.carousel-item.active .swatch {
+    border-color: #1a1a1a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.swatch-painted {
+    background: linear-gradient(135deg, #f5f5f7 0%, #e8e8eb 100%);
+}
+
+.swatch-wallpaper {
+    background: repeating-linear-gradient(45deg, #e8e8eb, #e8e8eb 10px, #f0f0f3 10px, #f0f0f3 20px);
+}
+
+.swatch-brick {
+    background: repeating-linear-gradient(
+        90deg,
+        #a0593f 0px,
+        #a0593f 80px,
+        #8b4726 80px,
+        #8b4726 82px,
+        #a0593f 82px,
+        #a0593f 160px,
+        #8b4726 160px,
+        #8b4726 162px
+    );
+    background-size: 160px 100px;
+    background-position: 0 0, 80px 50px;
+}
+
+.swatch-concrete {
+    background: repeating-linear-gradient(
+        90deg,
+        #808080 0px,
+        #808080 1px,
+        #888888 1px,
+        #888888 3px,
+        #808080 3px,
+        #808080 5px
+    );
+}
+
+.swatch-laminate {
+    background: linear-gradient(90deg, #c19a6b 0%, #d4a574 50%, #c19a6b 100%);
+}
+
+.swatch-wood {
+    background: repeating-linear-gradient(
+        90deg,
+        #8B4513 0px,
+        #A0522D 2px,
+        #8B4513 4px,
+        #654321 6px,
+        #8B4513 8px
+    );
+}
+
+.swatch-tile {
+    background: repeating-conic-gradient(#f0f0f3 0% 25%, #e8e8eb 0% 50%) 0 0 / 20px 20px;
+}
+
+.swatch-concrete-floor {
+    background: #a0a0a0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 35px,
+        rgba(255, 255, 255, 0.05) 35px,
+        rgba(255, 255, 255, 0.05) 70px
+    );
+}
+
+/* ========== TEXTAREA ========== */
+
+.option_list-comment {
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea-field {
+    padding: 12px 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Google Sans';
+    min-height: 100px;
+    resize: vertical;
+    background: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.textarea-field:hover,
+.textarea-field:focus {
+    border-color: #999;
+    outline: none;
+}
+
+/* ========== PRICE & ACTIONS BLOCK ========== */
+
+.calculator_info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.calculator_price {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.price-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.price-value {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#priceValue {
+    font-size: 48px;
+}
+
+.price-note {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.calculator_actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-send {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.btn-send:hover {
+    background: #2d2d2d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-save {
+    background: #fff;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+}
+
+.btn-save:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.btn-delete {
+    background: #f5f5f7;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.btn-delete:hover {
+    background: #e8e8eb;
+    color: #333;
+}

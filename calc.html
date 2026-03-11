@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/media.css">
+
+    <title>Dot Studio</title>
+</head>
+<body>
+    
+        <header class="header">
+        <div class="header_fixed">
+            <div class="header_top">
+            <div class="container">
+                <div class="header_calc">
+                    <a href="calc.html" class="header_calc-calc calc">Calculator</a>
+                </div>
+
+                <img src="" alt="" class="header_logo logo">
+
+                <div class="header_buttons buttons">
+                    <a class="header_buttons-lang lang">ENG</a>
+                    <a class="header_buttons-signup signup">Sign Up</a>
+                </div>
+            </div>
+            
+        </div>
+        <nav class="header_nav nav">
+
+                <a href="index.html" class="header_nav-link nav-link">Home</a>
+                <a href="#" class="header_nav-link nav-link">About</a>
+                <a href="#" class="header_nav-link nav-link">Services</a>
+                <a href="#" class="header_nav-link nav-link">Portfolio</a>
+                <a href="#" class="header_nav-link nav-link">Contact</a>
+        </nav>
+        </div>
+  
+
+    </header>
+
+    <section class="about_calculator"></section>
+
+    <section class="section calculator_section">
+        <div class="calculator_container container">
+            <div class="calculator_content">
+                <h1 class="calculator_section-content-title title">Design Configurator</h1>
+                <p class="calculator_section-content-text text">Create your perfect design by selecting style, size, room type, and finishes</p>
+            </div>
+            
+            <div class="calculator_block">
+                <!-- Image Preview with Layering -->
+                <div class="calculator_img-block">
+                    <div class="image-canvas">
+                        <div class="layer layer-base" id="baseLayer"></div>
+                        <div class="layer layer-walls" id="wallsLayer"></div>
+                        <div class="layer layer-flooring" id="flooringLayer"></div>
+                        <div class="layer layer-furniture" id="furnitureLayer"></div>
+                        <div class="layer layer-decor" id="decorLayer"></div>
+                    </div>
+                </div>
+
+                <!-- Configuration Options -->
+                <div class="calculator_options-list">
+                    <!-- Room Type Toggle -->
+                    <div class="options_list-toggle">
+                        <label class="option-label">Room Type</label>
+                        <div class="toggle-buttons">
+                            <button class="toggle-btn active" data-room="kitchen">Kitchen</button>
+                            <button class="toggle-btn" data-room="living-room">Living Room</button>
+                            <button class="toggle-btn" data-room="bedroom">Bedroom</button>
+                            <button class="toggle-btn" data-room="office">Office</button>
+                        </div>
+                    </div>
+
+                    <!-- Design Style Selection -->
+                    <div class="options_list-select">
+                        <label class="option-label">Design Style</label>
+                        <select id="styleSelect" class="select-dropdown">
+                            <option value="minimalistic">Minimalistic</option>
+                            <option value="modern">Modern</option>
+                            <option value="classic">Classic</option>
+                            <option value="scandinavian">Scandinavian</option>
+                            <option value="industrial">Industrial</option>
+                        </select>
+                    </div>
+
+                    <!-- Room Size Input -->
+                    <div class="options_list-input">
+                        <label class="option-label">Room Area (m²)</label>
+                        <input type="number" id="sizeInput" class="input-field" min="5" max="100" value="20" placeholder="Enter room size in m²">
+                    </div>
+
+                    <!-- Wall Type Carousel -->
+                    <div class="options_list-carousel">
+                        <label class="option-label">Wall Type</label>
+                        <div class="carousel-container">
+                            <button class="carousel-nav prev">◀</button>
+                            <div class="carousel-items">
+                                <div class="carousel-item active" data-wall="painted">
+                                    <div class="swatch swatch-painted"></div>
+                                    <span>Painted</span>
+                                </div>
+                                <div class="carousel-item" data-wall="wallpaper">
+                                    <div class="swatch swatch-wallpaper"></div>
+                                    <span>Wallpaper</span>
+                                </div>
+                                <div class="carousel-item" data-wall="brick">
+                                    <div class="swatch swatch-brick"></div>
+                                    <span>Brick</span>
+                                </div>
+                                <div class="carousel-item" data-wall="concrete">
+                                    <div class="swatch swatch-concrete"></div>
+                                    <span>Concrete</span>
+                                </div>
+                            </div>
+                            <button class="carousel-nav next">▶</button>
+                        </div>
+                    </div>
+
+                    <!-- Wall Color Carousel -->
+                    <div class="options_list-carousel">
+                        <label class="option-label">Wall Color</label>
+                        <div class="carousel-container">
+                            <button class="carousel-nav prev">◀</button>
+                            <div class="carousel-items">
+                                <div class="carousel-item active" data-color="white">
+                                    <div class="swatch" style="background-color: #FFFFFF; border: 1px solid #ddd;"></div>
+                                    <span>White</span>
+                                </div>
+                                <div class="carousel-item" data-color="light-gray">
+                                    <div class="swatch" style="background-color: #E8E8E8;"></div>
+                                    <span>Light Gray</span>
+                                </div>
+                                <div class="carousel-item" data-color="warm-beige">
+                                    <div class="swatch" style="background-color: #E9D5C3;"></div>
+                                    <span>Warm Beige</span>
+                                </div>
+                                <div class="carousel-item" data-color="soft-blue">
+                                    <div class="swatch" style="background-color: #B8D4E8;"></div>
+                                    <span>Soft Blue</span>
+                                </div>
+                                <div class="carousel-item" data-color="sage-green">
+                                    <div class="swatch" style="background-color: #A8B89E;"></div>
+                                    <span>Sage Green</span>
+                                </div>
+                            </div>
+                            <button class="carousel-nav next">▶</button>
+                        </div>
+                    </div>
+
+                    <!-- Floor Type Carousel -->
+                    <div class="options_list-carousel">
+                        <label class="option-label">Floor Type</label>
+                        <div class="carousel-container">
+                            <button class="carousel-nav prev">◀</button>
+                            <div class="carousel-items">
+                                <div class="carousel-item active" data-floor="laminate">
+                                    <div class="swatch swatch-laminate"></div>
+                                    <span>Laminate</span>
+                                </div>
+                                <div class="carousel-item" data-floor="wood">
+                                    <div class="swatch swatch-wood"></div>
+                                    <span>Wood</span>
+                                </div>
+                                <div class="carousel-item" data-floor="tile">
+                                    <div class="swatch swatch-tile"></div>
+                                    <span>Tile</span>
+                                </div>
+                                <div class="carousel-item" data-floor="concrete">
+                                    <div class="swatch swatch-concrete-floor"></div>
+                                    <span>Concrete</span>
+                                </div>
+                            </div>
+                            <button class="carousel-nav next">▶</button>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="option_list-comment">
+                        <label class="option-label">Your Requests & Wishes</label>
+                        <textarea id="commentsInput" class="textarea-field" placeholder="Share your special requests or design preferences..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Price & Actions Block -->
+                <div class="calculator_info-block">
+                    <div class="calculator_price">
+                        <div class="price-label">Estimated Price</div>
+                        <div class="price-value">
+                            $<span id="priceValue">2400</span>
+                        </div>
+                        <div class="price-note" id="priceNote">Based on 20 m² minimalistic kitchen</div>
+                    </div>
+
+                    <div class="calculator_actions">
+                        <button class="action-btn btn-send" id="sendBtn">
+                            <span>Send Request</span>
+                        </button>
+                        <button class="action-btn btn-save" id="saveBtn">
+                            <span>Save Design</span>
+                        </button>
+                        <button class="action-btn btn-delete" id="deleteBtn">
+                            <span>Delete</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="src/js/script.js"></script>
+
+</body>
+</html>
